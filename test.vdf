@@ -1,0 +1,950 @@
+"InstallConfigStore"
+{
+	"Software"
+	{
+		"Valve"
+		{
+			"Steam"
+			{
+				"AutoUpdateWindowEnabled"		"0"
+				"ipv6check_http_state"		"bad"
+				"ShaderCacheManager"
+				{
+					"HasCurrentBucket"		"1"
+					"CurrentBucketGPU"		"NAVI22;NAVI22;AMD RADV NAVI22;AMD RADV NAVI22;SteamSwarm;SteamSwarm;SteamSwarm"
+					"CurrentBucketDriver"		"L7:cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a;L7:67b2df503f9ab4bd240a896381a0475f3b65f766;L7:463708fb4d655c0621c7bf21f9d32299;L7:76e0956b7cf1541ebd392916aa8eff55;G7:VulkanPipelinesV6;G7:CompatAudioTCMediaV1;G7:CompatVideoTCMediaV1"
+					"ProcessingQueue"		""
+					"EnableShaderBackgroundProcessing"		"1"
+					"App"
+					{
+						"1086940"
+						{
+							"ShaderCacheSize"		"1301388673"
+						}
+						"289070"
+						{
+							"ShaderCacheSize"		"67915212"
+						}
+						"820520"
+						{
+							"ShaderCacheSize"		"117564285"
+						}
+						"632360"
+						{
+							"ShaderCacheSize"		"156203828"
+						}
+						"1716740"
+						{
+							"ShaderCacheSize"		"686903362"
+						}
+						"228980"
+						{
+							"ShaderCacheSize"		"0"
+						}
+						"233860"
+						{
+							"ShaderCacheSize"		"37715163"
+						}
+						"294100"
+						{
+							"ShaderCacheSize"		"26914126"
+						}
+						"427520"
+						{
+							"ShaderCacheSize"		"19921279"
+						}
+						"646570"
+						{
+							"ShaderCacheSize"		"1337240"
+						}
+						"874260"
+						{
+							"ShaderCacheSize"		"155115758"
+						}
+						"1161580"
+						{
+							"ShaderCacheSize"		"1036856244"
+						}
+						"1284210"
+						{
+							"ShaderCacheSize"		"2741054219"
+						}
+						"1330000"
+						{
+							"ShaderCacheSize"		"31835927"
+						}
+						"1493710"
+						{
+							"ShaderCacheSize"		"0"
+						}
+						"1549970"
+						{
+							"ShaderCacheSize"		"609286077"
+						}
+						"1628350"
+						{
+							"ShaderCacheSize"		"0"
+						}
+						"1794680"
+						{
+							"ShaderCacheSize"		"9031509"
+						}
+						"2180100"
+						{
+							"ShaderCacheSize"		"0"
+						}
+						"2348590"
+						{
+							"ShaderCacheSize"		"0"
+						}
+						"244850"
+						{
+							"ShaderCacheSize"		"2652000248"
+						}
+						"2296990"
+						{
+						}
+						"548430"
+						{
+							"ShaderCacheSize"		"1814939916"
+						}
+					}
+					"CompatToolBucketHashes"
+					{
+						"2180100"		"11995790;G7:VulkanPipelinesV6_904f69d2b1b44b65;G7:VulkanPipelinesV6_3aae96707d1312e2"
+						"1493710"		"12135228;G7:VulkanPipelinesV6_904f69d2b1b44b65;G7:VulkanPipelinesV6_33b81970799ca553"
+						"2348590"		"11723527;G7:VulkanPipelinesV6_904f69d2b1b44b65;G7:VulkanPipelinesV6_3aae96707d1312e2"
+					}
+					"CommittedDepotManifests"
+					{
+						"228980"		""
+						"233860"		"10859841_2589968663548667989_20196520_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;23562713_7089323721382643797_3820182_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD;3434988_2358716648878586316_8200681_fozpipelinesv6\\steam_pipeline_cache.foz"
+						"244850"		"4946284_2626271488983094951_5801315_transcoded_audio.foz;4534570_3951453938332404175_2598974215_transcoded_video.foz;23478626_4467039429874250869_3149081_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD;2231685_6016572744910935228_7772897_fozpipelinesv6\\steam_pipeline_cache.foz;10839289_4740456978410713011_31526865_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH"
+						"289070"		"3354129_6244342226480101326_7090768_fozpipelinesv6\\steam_pipeline_cache.foz;19974620_6205189986355538834_16356730_fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\TOUCH;10877037_5546562561903456068_32454994_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;23451589_6000887008182783213_464430_mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\depot_index,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache_idx.foz;23493457_1294322160776275559_5027757_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\depot_index,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache_idx.foz"
+						"294100"		"23131377_5058552591301006730_8588321_mesa_shader_cache_sf\\0ce71886bbb1857a7928ecba66dae7bb\\AMD;23452491_7481983073608342169_8588318_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD;1863069_8020622184293357488_4074855_fozpipelinesv6\\steam_pipeline_cache.foz;23493168_4193852423939146283_317150_mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\depot_index,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache_idx.foz"
+						"427520"		"23125202_4390525726988378610_4298679_mesa_shader_cache_sf\\0ce71886bbb1857a7928ecba66dae7bb\\AMD;1708178_6850328377603148693_3554371_fozpipelinesv6\\steam_pipeline_cache.foz;23438272_6479642786638538595_202828_mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\depot_index,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache_idx.foz;23438208_6613818049427464693_4792651_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD"
+						"632360"		"2426392_7801590263309864685_27245263_fozpipelinesv6\\steam_pipeline_cache.foz;10826635_6404233684169182087_103845011_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;23542197_5668631717687059509_17520236_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD"
+						"646570"		"6367956_8197337002769826904_2131_fozpipelinesv6\\steam_pipeline_cache.foz"
+						"745920"		"3560799_2954484292016271702_17704_fozpipelinesv6\\steam_pipeline_cache.foz;1817998_8494738539806019522_5432579_transcoded_video.foz;10923664_2698672500577037915_167273084_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH"
+						"820520"		"18566878_6186302086000777347_10183_fozpipelinesv6\\steam_pipeline_cache.foz;20017381_513922468340941266_21124565_fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\TOUCH;12584108_1045850464162926558_73179087_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH"
+						"874260"		"4547771_7059032508699602433_21700_fozpipelinesv6\\steam_pipeline_cache.foz;4226361_5059914666640278155_25666822_transcoded_video.foz;11110528_365449351113933140_111426046_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH"
+						"1086940"		"11174429_7226101329950054500_304241627_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;1543906_4043600469271198684_861114603_fozpipelinesv6\\steam_pipeline_cache.foz;23456515_5057015721745340676_13836664_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD"
+						"1091500"		"10971004_5959870879863502218_55174_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;19872052_3362526098283223485_104952715_fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\TOUCH;1760658_584160241213337119_21291_fozpipelinesv6\\steam_pipeline_cache.foz"
+						"1161580"		"6827385_922878487135800650_18738358_fozpipelinesv6\\steam_pipeline_cache.foz;726796_8310860513723216727_864099834_transcoded_video.foz;10929049_2569523775684879976_127690728_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH"
+						"1284210"		"19782555_5095679455819368764_167867_fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\TOUCH;11675907_3323219807336982279_2155193468_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;23467629_870762982340827462_173673235_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\depot_index,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache_idx.foz;11681696_2501272594785837014_264512729_fozpipelinesv6\\steam_pipeline_cache.foz"
+						"1330000"		"10981620_3606161313482701150_24596981_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH"
+						"1493710"		""
+						"1549970"		"10842180_3778243094122706380_406665382_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;19966854_2035301966793669368_69271200_fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\TOUCH;8110723_4349182995533257093_58089511_fozpipelinesv6\\steam_pipeline_cache.foz"
+						"1628350"		""
+						"1716740"		"19916686_63922482123132345_342795244_fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\TOUCH;23197123_1631703462200035880_129859225_mesa_shader_cache_sf\\0ce71886bbb1857a7928ecba66dae7bb\\AMD;23336488_4341474179337681949_12499_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH;19658222_1949282591822197536_75727804_fozpipelinesv6\\steam_pipeline_cache.foz;23434241_1716406338449191656_159023909_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\depot_index,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache_idx.foz;23187634_3626773508058802603_86735693_fozpipelinesv6\\steamapprun_pipeline_cache.33b81970799ca553\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.33b81970799ca553\\TOUCH"
+						"1794680"		"23481916_5667022784600144957_165789_mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\depot_index,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\cdfbe2e5c5c5ab85962ee9a0878ab6675b149e7a\\NAVI22\\steam_cache_idx.foz;23481915_5822864404695833110_1200692_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\depot_index,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache_idx.foz;4878104_5826314425823178098_2569536_fozpipelinesv6\\steam_pipeline_cache.foz"
+						"2180100"		""
+						"2348590"		""
+						"2481800"		""
+						"548430"		"19971889_4696880149125335867_90209552_fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.3aae96707d1312e2\\TOUCH;23484997_4309599705695366983_59410011_mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\depot_index,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache.foz,mesa_shader_cache_sf\\463708fb4d655c0621c7bf21f9d32299\\AMD RADV NAVI22\\steam_cache_idx.foz;1661100_6193084702772720486_91502128_fozpipelinesv6\\steam_pipeline_cache.foz;725201_304864114598656744_1195768128_transcoded_video.foz;10812489_6546375211869052412_363415714_fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\steam_pipeline_cache.foz,fozpipelinesv6\\steamapprun_pipeline_cache.904f69d2b1b44b65\\TOUCH"
+					}
+				}
+				"ipv6check_udp_state"		"bad"
+				"CMWebSocket"
+				{
+					"ext1-atl1.steamserver.net:27023"
+					{
+						"LastPingTimestamp"		"0"
+						"LastPingValue"		"66"
+						"LastLoadValue"		"26"
+					}
+					"ext2-iad1.steamserver.net:27020"
+					{
+						"LastPingTimestamp"		"0"
+						"LastPingValue"		"79"
+						"LastLoadValue"		"30"
+					}
+					"ext1-ord1.steamserver.net:27035"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27025"
+					{
+						"LastPingTimestamp"		"0"
+						"LastPingValue"		"89"
+						"LastLoadValue"		"26"
+					}
+					"ext2-iad1.steamserver.net:27019"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27019"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27020"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27036"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27037"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27034"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"89"
+						"LastLoadValue"		"27"
+					}
+					"ext1-iad1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27038"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-atl1.steamserver.net:27031"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-atl1.steamserver.net:27036"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"66"
+						"LastLoadValue"		"31"
+					}
+					"ext2-atl1.steamserver.net:27037"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27024"
+					{
+						"LastPingTimestamp"		"1695401213"
+						"LastPingValue"		"80"
+						"LastLoadValue"		"26"
+					}
+					"ext3-iad1.steamserver.net:27029"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27025"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27030"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27032"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27033"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27020"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27031"
+					{
+						"LastPingTimestamp"		"0"
+						"LastPingValue"		"95"
+						"LastLoadValue"		"36"
+					}
+					"ext2-atl1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"0"
+						"LastPingValue"		"90"
+						"LastLoadValue"		"42"
+					}
+					"ext2-atl1.steamserver.net:27030"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27029"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"54"
+						"LastLoadValue"		"32"
+					}
+					"ext2-atl1.steamserver.net:27023"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27037"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27029"
+					{
+						"LastPingTimestamp"		"1695516369"
+						"LastPingValue"		"58"
+						"LastLoadValue"		"32"
+					}
+					"ext2-iad1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"93"
+						"LastLoadValue"		"39"
+					}
+					"ext3-iad1.steamserver.net:27021"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27037"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27030"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext4-iad1.steamserver.net:27023"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27029"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27036"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27022"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27020"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27022"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27038"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27035"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27034"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27030"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27019"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27031"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"94"
+						"LastLoadValue"		"28"
+					}
+					"ext4-iad1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-ord1.steamserver.net:27030"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27032"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"49"
+						"LastLoadValue"		"42"
+					}
+					"ext1-atl1.steamserver.net:27021"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27028"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27024"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27038"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27033"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27022"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-atl1.steamserver.net:27022"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-atl1.steamserver.net:27035"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27030"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-atl1.steamserver.net:27028"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27019"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-atl1.steamserver.net:27035"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext3-iad1.steamserver.net:27037"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"61"
+						"LastLoadValue"		"29"
+					}
+					"ext1-iad1.steamserver.net:27035"
+					{
+						"LastPingTimestamp"		"1695526795"
+						"LastPingValue"		"91"
+						"LastLoadValue"		"33"
+					}
+					"ext2-iad1.steamserver.net:27035"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27031"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext3-iad1.steamserver.net:27033"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27019"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27032"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27033"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-iad1.steamserver.net:27036"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27028"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27038"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext4-iad1.steamserver.net:27034"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-iad1.steamserver.net:27034"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27028"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27038"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27024"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext3-iad1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27037"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27031"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27031"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27029"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27022"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27032"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-ord1.steamserver.net:27025"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27021"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27036"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27028"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-ord1.steamserver.net:27029"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27028"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:27036"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-dfw1.steamserver.net:27025"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27021"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-ord1.steamserver.net:27022"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-ord1.steamserver.net:27033"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext2-ord1.steamserver.net:27024"
+					{
+						"LastPingTimestamp"		"0"
+					}
+					"ext1-dfw1.steamserver.net:443"
+					{
+						"LastPingTimestamp"		"0"
+					}
+				}
+				"RecentWebSocket443Failures"		"1694969865,1694969878,1694969899,1694969936,1694970497"
+				"RecentWebSocketNon443Failures"		""
+				"RecentUDPFailures"		""
+				"RecentTCPFailures"		"1694990569"
+				"MTBF"		"1191354059"
+				"ConnectCache"
+				{
+				}
+				"Accounts"
+				{
+					"legusxyz"
+					{
+						"SteamID"		"76561198348183427"
+					}
+				}
+				"CellIDServerOverride"		"12"
+				"cip"		"0200000020136e05e297a46c000044637256"
+				"SurveyDate"		"2017-12-24"
+				"SurveyDateVersion"		"2007840011029818816"
+				"SurveyDateType"		"3"
+				"Rate"		"30000"
+				"RecentDownloadRate"		"2455556"
+				"LastConfigstoreUploadTime"		"1695516432"
+				"CompatToolMapping"
+				{
+					"0"
+					{
+						"name"		"proton_8"
+						"config"		""
+						"priority"		"75"
+					}
+					"289070"
+					{
+						"name"		"proton_8"
+						"config"		""
+						"priority"		"250"
+					}
+					"820520"
+					{
+						"name"		"proton_8"
+						"config"		""
+						"priority"		"250"
+					}
+					"1716740"
+					{
+						"name"		"proton_experimental"
+						"config"		""
+						"priority"		"250"
+					}
+					"244850"
+					{
+						"name"		"proton_8"
+						"config"		""
+						"priority"		"250"
+					}
+				}
+				"AutoUpdateWindowStart"		"3"
+				"AutoUpdateWindowEnd"		"9"
+				"Tools"
+				{
+					"1086940"
+					{
+						"SizeOnDisk"		"937666095"
+					}
+					"289070"
+					{
+						"SizeOnDisk"		"1282014542"
+					}
+					"820520"
+					{
+						"SizeOnDisk"		"461332545"
+					}
+					"632360"
+					{
+						"SizeOnDisk"		"269598036"
+					}
+					"1716740"
+					{
+						"SizeOnDisk"		"621404744"
+					}
+					"244850"
+					{
+						"SizeOnDisk"		"703234199"
+					}
+					"427520"
+					{
+						"SizeOnDisk"		"0"
+					}
+					"294100"
+					{
+						"SizeOnDisk"		"0"
+					}
+					"646570"
+					{
+						"SizeOnDisk"		"0"
+					}
+					"2296990"
+					{
+					}
+					"548430"
+					{
+						"SizeOnDisk"		"272814440"
+					}
+				}
+				"depots"
+				{
+					"228983"
+					{
+						"DecryptionKey"		"77c8e812cd79e67e2d376721253ebb07e06b3646f05671c6c9517b27be14734b"
+					}
+					"228984"
+					{
+						"DecryptionKey"		"df7df98d3134f5e0009d5ebcaaf3bbb91ea2f7cbad81a37a9d16bc1835f57068"
+					}
+					"228986"
+					{
+						"DecryptionKey"		"51dd3611d28621644730736f3bb1fd6b960053a45cd79123f2b9a80c9181dad5"
+					}
+					"228988"
+					{
+						"DecryptionKey"		"1845444d5e2cfd0ae65ae4a8fedb6e2fbf776fcc5b913ab4ac461bc9a74f8358"
+					}
+					"228989"
+					{
+						"DecryptionKey"		"ad69276eb476cf06c40312df7376d63deac0c838b9a2767005be8bb306ffb853"
+					}
+					"228990"
+					{
+						"DecryptionKey"		"44d8c45ce229a11c4f231a3d2a350eaf80b0d69a8af938ec7ccca720f694b0e8"
+					}
+					"229003"
+					{
+						"DecryptionKey"		"8e0ded6e1d9481eb286217322054ce7b0b8243daae770f31a30667752b1a3c63"
+					}
+					"1716741"
+					{
+						"DecryptionKey"		"14c0bdb25d858d05a7381ba67a373aa99b50c5bd4cf78f1895751d418de29ceb"
+					}
+					"1716742"
+					{
+						"DecryptionKey"		"f7ba0bf1fd70db2958682bc87fcab6dfe9a6f8ca774321df79b1d595d5be303b"
+					}
+					"2401181"
+					{
+						"DecryptionKey"		"9382f0b0fee3c8ccb0cf9fc2389a52eab89fdf1c4e6f408635a82b30037aed9e"
+					}
+					"1716740"
+					{
+						"DecryptionKey"		"aadd49bba583a51f17cf343fa4ff71c77f30a51cc417490f7a35b8a3c2dc59ea"
+					}
+					"241100"
+					{
+						"DecryptionKey"		"141426adc496d4a9070cfa549623bd7f84bf70711e9c213881191eaad8cc90a4"
+					}
+					"1284210"
+					{
+						"DecryptionKey"		"eb756d0fb369aba7d86fd962fb0eb2eec10a759903418823d50af7af7f188c75"
+					}
+					"233860"
+					{
+						"DecryptionKey"		"e82fe4a117edac4ddeda231d5e0c962001d3be84eb50bd5d4bbeec2a00068217"
+					}
+					"1086940"
+					{
+						"DecryptionKey"		"b67aeb033de6a4692edc568edb48a6cd6e11592f5adcaacf9465d4a459b04bd2"
+					}
+					"289070"
+					{
+						"DecryptionKey"		"ed38a5e929f3d0752878910f8e8020dcb191d9c469bd0c9a81568115703715f9"
+					}
+					"632360"
+					{
+						"DecryptionKey"		"92e4aee4d6eb4a7cf376684e71a8264784ad227de23e06f5b8f22ac7d9f759ad"
+					}
+					"1161580"
+					{
+						"DecryptionKey"		"364ffe42b7c4f24c583daafeef633181bc7918ffa515ddfe663df45fd29e044e"
+					}
+					"874260"
+					{
+						"DecryptionKey"		"e6f4952c3024e77e96719fae80ea3f71cf8e377cef24d0aeda02849f8c5f58cb"
+					}
+					"1330000"
+					{
+						"DecryptionKey"		"dcae5d2309999bc11e24afb025b8e39c755606b65d29c9242eb6e86546476b9a"
+					}
+					"820520"
+					{
+						"DecryptionKey"		"9ea2f0a9220dcc546e4d90288190a84299665589983e069def56f17c18ef8a8b"
+					}
+					"1549970"
+					{
+						"DecryptionKey"		"5c2645c90c8678d549fe32d86ab6c06e663f75787403c7a7ef2661e089fd7dbd"
+					}
+					"427520"
+					{
+						"DecryptionKey"		"31ecbbd55ffe883e0c7014eb69a61e3fd85b18ce745b2d50d0b87825c74578b4"
+					}
+					"1086941"
+					{
+						"DecryptionKey"		"4876e089a6bb7a4d8da586306d4040c7d4bd5fb7c05da6c5441a760aa0b2bef6"
+					}
+					"1086942"
+					{
+						"DecryptionKey"		"5313c9d372b30e73c15606d9792e5f23314c21559d35f54eb7b5e8369e28b036"
+					}
+					"1419652"
+					{
+						"DecryptionKey"		"43c13e12030aed1fdb00bd1c630bd68f0d22cb23289c879b00d7904aa05fcc89"
+					}
+					"1419653"
+					{
+						"DecryptionKey"		"dc9bee49d256e78104b71d0bf90e9818631b069dce3b576a86fa6345d3b94896"
+					}
+					"2378500"
+					{
+						"DecryptionKey"		"77dfde8ac009c5a510843210ffa1343976be2cc3a303122c9c635fcba725d9cb"
+					}
+					"1628351"
+					{
+						"DecryptionKey"		"34d2f12079df06725c158782f1ce1db27ba66c6dd9f5610a901fcc7dd5b9bcae"
+					}
+					"1493711"
+					{
+						"DecryptionKey"		"fe5a344520702440fcaf4f43f02af4b128229789f09d7595b05c3932e2aa0676"
+					}
+					"294100"
+					{
+						"DecryptionKey"		"44498055cce67eea5d84c5b6bc1bd5ca9e8c988963aea857574277fc217cbad0"
+					}
+					"1330001"
+					{
+						"DecryptionKey"		"2f6104a763da7d625fe6284c3b52beca5787775c77574a842799f5be1fd5e43f"
+					}
+					"820521"
+					{
+						"DecryptionKey"		"afd495a7aca2ae1065ca8255c2e7955599b6d62d9431f9de332981638179361f"
+					}
+					"1794680"
+					{
+						"DecryptionKey"		"4d6aeb4ef64d8f10cf5cc1e532efa20f212f3ec624394ae50b9c18782332b07e"
+					}
+					"1794681"
+					{
+						"DecryptionKey"		"a2ae9bd3450da7127b7298a3e66264d71b8413bd7bacd674788ca98df20ee262"
+					}
+					"1794685"
+					{
+						"DecryptionKey"		"b84475f8ff35397bf450e3fd9e2b62d63058277871f676dcb7fb506c9b89a599"
+					}
+					"2230761"
+					{
+						"DecryptionKey"		"26cf4b06368265325ad0ab20b00118e4a2c1af2a291be8589017fcb6fbb3b42f"
+					}
+					"2230763"
+					{
+						"DecryptionKey"		"6a08bb534780032b81fac9fd77e339d7691e64978534c04ee5ce80342112e510"
+					}
+					"228985"
+					{
+						"DecryptionKey"		"21a2f639584d9bd462c5c4b3e10f881cba8a17ae674c830c4f083551cd356e9c"
+					}
+					"229007"
+					{
+						"DecryptionKey"		"eba9fa9ff4f811929c119074450f49f739113bcae9317ded9bea262aa21ec58d"
+					}
+					"244851"
+					{
+						"DecryptionKey"		"c2a914f1b4a29930055cf542e9061ead9b68a11f83da2bb811ff0bdd6ccd3fc4"
+					}
+					"1241550"
+					{
+						"DecryptionKey"		"0f4349457367949e9aca25e33826ae022cd451a67b5ad5761a719d7838caa2f9"
+					}
+					"244850"
+					{
+						"DecryptionKey"		"88f1361bc409c0dea1f2aada8667ed87d442eed9a908ddc57994d21ff6808a18"
+					}
+					"2481801"
+					{
+						"DecryptionKey"		"030b9dbf829bb61a4cec194c96ba44cf73e25c5e8ab3f0d540bde261e04b3c86"
+					}
+					"2296991"
+					{
+						"DecryptionKey"		"27bc64e8bc9748cccd892ab3401ed3c2e01b42aa7b496e9c0dd6ff0e06406f4c"
+					}
+					"2296990"
+					{
+						"DecryptionKey"		"7947e33b9fb441b031cf63f016bcf55ff96c45dcc6bc80381af55b452146f7ef"
+					}
+					"427523"
+					{
+						"DecryptionKey"		"da6be217fa0d138b92f96b6f6a825fe3d0d271bfe7125601eaa4f66c818ceecb"
+					}
+					"1091501"
+					{
+						"DecryptionKey"		"fd4524cb30582752f15e4bf01254dbb7b890f58008101a40208cd78fb139d800"
+					}
+					"1495710"
+					{
+						"DecryptionKey"		"d1eee983c6b6dc175c3ec89ae337fe4e4435d19bf689ed1607e19f0887ca1e3c"
+					}
+					"1091500"
+					{
+						"DecryptionKey"		"cf941dce25dfe9090877d385fca0ded473ecc1e12a09e28698b5c8dd3c134598"
+					}
+					"745921"
+					{
+						"DecryptionKey"		"0b59c50f2cfd62e43a3afffc1ad18f2fd3719fda048cca059b6b56d966c797f5"
+					}
+					"745920"
+					{
+						"DecryptionKey"		"226dcb735f0d3abd3a246afbeb7aa29b89ba4ae99ee1630878b4651af9ae6971"
+					}
+					"2180101"
+					{
+						"DecryptionKey"		"b3d890b258520e34c7483c6658634ebc2406dbdd52e86287aa289f305ac32365"
+					}
+					"548431"
+					{
+						"DecryptionKey"		"73ef10dc344cb7fb34be23aea35b20fbb2b32b0db50650919c7e3d731e759aad"
+					}
+					"548430"
+					{
+						"DecryptionKey"		"35e74cda02258a1dc29466af2d3c05f2030830981ead0936e3eb6c9d59284e7d"
+					}
+				}
+				"AllowDownloadsDuringGameplay"		"1"
+			}
+		}
+	}
+	"UI"
+	{
+		"display"
+		{
+			"Current"
+			{
+				"ScaleFactor"		"1"
+			}
+		}
+	}
+	"SDL_GamepadBind"		"03000000de280000ff11000001000000,Steam Virtual Gamepad,a:b0,b:b1,back:b6,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+03000000de280000fc11000001000000,Steam Controller,a:b0,b:b1,back:b6,dpdown:b14,dpleft:b15,dpright:b13,dpup:b12,guide:b8,leftshoulder:b4,leftstick:b9,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b10,righttrigger:a5,rightx:a3,righty:a4,start:b7,x:b2,y:b3,platform:Linux,
+030000005e040000120b00000f050000,Xbox Series X Controller,a:b0,b:b1,x:b2,y:b3,back:b6,guide:b8,start:b7,leftstick:b9,rightstick:b10,leftshoulder:b4,rightshoulder:b5,dpup:h0.1,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,misc1:b11,leftx:a0,lefty:a1,rightx:a3,righty:a4,lefttrigger:a2,righttrigger:a5,crc:9d50,platform:Linux,"
+	"streaming"
+	{
+		"ClientID"		"-1852362672789577894"
+	}
+	"Music"
+	{
+		"LocalLibrary"
+		{
+			"Directories"
+			{
+				"0"		"0200000075240f718397a51c70441a56ddf10778a14c04a02584e1e4ea81de18db98c84ee9b114882ebf14bb82b81eb66828c1e3e64ac0a65abc594586f8184b374f9e1308d7ba2e43"
+				"1"		"0200000075240f718397a51c70441a56ddf10778a14c04a02584e1e48998c212d9f4e54be0bc13885289149c9a8042a06e4da08e873ab2a616b042588aff1849412ef26e66dd13f0841a26f87687b9f6a61569d2f01d2ef119e02831b3c0a24108080c4a7ede"
+			}
+		}
+	}
+	"WebStorage"
+	{
+		"DownloadsStoreRecentlyCompleted"		"{\"version\":1,\"data\":[{\"appid\":548430,\"total_bytes\":2903697072,\"downloaded_bytes\":2903697072,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695529453,\"buildid\":0,\"target_buildid\":12142227,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":2884065136,\"downloaded_bytes\":2884065136},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":true,\"completed_update\":true,\"total_bytes\":19631936,\"downloaded_bytes\":19631936}]},{\"appid\":1794680,\"total_bytes\":5634944,\"downloaded_bytes\":5634944,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695516394,\"buildid\":12005416,\"target_buildid\":12166753,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":5265248,\"downloaded_bytes\":5265248},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":true,\"completed_update\":true,\"total_bytes\":369696,\"downloaded_bytes\":369696}]},{\"appid\":1330000,\"total_bytes\":86219968,\"downloaded_bytes\":86219968,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695401255,\"buildid\":12136830,\"target_buildid\":12249834,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":86219968,\"downloaded_bytes\":86219968},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0}]},{\"appid\":427520,\"total_bytes\":59910448,\"downloaded_bytes\":59910448,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695401230,\"buildid\":11621827,\"target_buildid\":12179218,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":59910448,\"downloaded_bytes\":59910448},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0}]},{\"appid\":745920,\"total_bytes\":8887155552,\"downloaded_bytes\":8887155552,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695336889,\"buildid\":0,\"target_buildid\":11962241,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":8881961952,\"downloaded_bytes\":8881961952},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":true,\"completed_update\":true,\"total_bytes\":5193600,\"downloaded_bytes\":5193600}]},{\"appid\":1628350,\"total_bytes\":3911744,\"downloaded_bytes\":3911744,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695336334,\"buildid\":11903591,\"target_buildid\":12134018,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":3911744,\"downloaded_bytes\":3911744},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0}]},{\"appid\":1091500,\"total_bytes\":60066112912,\"downloaded_bytes\":60066112912,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695323955,\"buildid\":0,\"target_buildid\":12246310,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":60066096016,\"downloaded_bytes\":60066096016},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":true,\"completed_update\":true,\"total_bytes\":16896,\"downloaded_bytes\":16896}]},{\"appid\":2296990,\"total_bytes\":7187207744,\"downloaded_bytes\":7187207744,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1695242814,\"buildid\":0,\"target_buildid\":12234327,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":7187147696,\"downloaded_bytes\":7187147696},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":true,\"completed_update\":true,\"total_bytes\":60048,\"downloaded_bytes\":60048}]},{\"appid\":2481800,\"total_bytes\":504390816,\"downloaded_bytes\":504390816,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1694971481,\"buildid\":0,\"target_buildid\":12194737,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":504390816,\"downloaded_bytes\":504390816},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0},{\"has_update\":false,\"completed_update\":false,\"total_bytes\":0,\"downloaded_bytes\":0}]},{\"appid\":244850,\"total_bytes\":17095351952,\"downloaded_bytes\":17095351952,\"active\":false,\"paused\":false,\"completed\":true,\"deferred_time\":0,\"queue_index\":-1,\"update_result\":0,\"update_error\":\"\",\"completed_time\":1694911191,\"buildid\":0,\"target_buildid\":12143844,\"launch_on_completion\":false,\"update_type_info\":[{\"has_update\":true,\"completed_update\":true,\"total_bytes\":14391361392,\"downloaded_bytes\":14391361392},{\"has_update\":true,\"completed_update\":true,\"total_bytes\":127387312,\"downloaded_bytes\":127387312},{\"has_update\":true,\"completed_update\":true,\"total_bytes\":2576603248,\"downloaded_bytes\":2576603248}]}]}"
+	}
+	"AuthorizedDevice"
+	{
+		"387917699"
+		{
+			"timeused"		"1693846019"
+			"description"		"ryzen-shine"
+			"tokenid"		"-2701657128714845544"
+		}
+	}
+}
+

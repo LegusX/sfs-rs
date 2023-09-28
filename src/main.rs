@@ -10,8 +10,8 @@ use fancy_regex::Regex;
 
 fn main() {
     let config_path = get_config_path();
-    //TODO: Make backup of config file
     let raw_vdf = read_steam_config(&config_path);
+    create_backup(&raw_vdf, &config_path);
     let vdf = parse_raw_vdf(&raw_vdf);
     write_config(&vdf, &raw_vdf, &config_path);
 }
@@ -117,4 +117,9 @@ fn write_config(vdf: &Vec<Device>, raw: &str, config_path: &str) -> () {
     let new_text = replace_regex.unwrap().replace(raw, replace_string);
 
     fs::write(config_path, new_text.as_ref()).expect("Failed to write to config file!");
+}
+
+fn create_backup(raw: &str, config_path: &str) -> () {
+    let backup_path = config_path.replace("config.vdf", "config.vdf.backup");
+    fs::write(&backup_path, raw).expect("Failed to write config backup file!");
 }

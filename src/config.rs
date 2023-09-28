@@ -9,24 +9,23 @@ use std::str;
 use fancy_regex::Regex;
 
 #[derive(Debug)]
-pub struct Device<'a> {
-    id: &'a str,
-    timeused: &'a str,
-    description: &'a str,
-    tokenid: &'a str,
+#[derive(Hash)]
+pub struct Device {
+    pub id: String,
+    timeused: String,
+    pub description: String,
+    tokenid: String,
 }
 
 #[derive(Debug)]
-pub struct Config<'a> {
+pub struct Config {
     path: String,
-    vdf: Vec<Device<'a>>,
+    pub vdf: Vec<Device>,
     raw: String,
 }
-impl Config<'_> {
-    pub fn reorder(vdf: Vec<Device>) {}
-
+impl Config {
     //Writes the new AuthorizedDevice value to the config file
-    fn write(&self) -> () {
+    pub fn write(&self) -> () {
         let replace_regex = Regex::new(r#""AuthorizedDevice"(.|\n)*(?=}\n\s})}"#);
         let mut replace_string: String = String::from("\"AuthorizedDevice\"\n        {");
         for device in &self.vdf {
@@ -38,10 +37,10 @@ impl Config<'_> {
                     "description"		"{}"
                     "tokenid"		"{}"
                 }}"#,
-                device.tokenid,
+                device.id,
                 device.timeused,
                 device.description,
-                device.id
+                device.tokenid
             );
             replace_string.push_str(&device_string);
         }
@@ -51,7 +50,7 @@ impl Config<'_> {
     }
 }
 
-pub fn new() {
+pub fn new() -> Config {
     let config_path = get_config_path();
     let raw_vdf = read_steam_config(&config_path);
     create_backup(&raw_vdf, &config_path);
@@ -62,6 +61,7 @@ pub fn new() {
         vdf,
         raw: raw_vdf.to_string(),
     };
+    return config;
 }
 
 fn get_config_path() -> String {
@@ -79,7 +79,7 @@ fn get_config_path() -> String {
             panic!("Can't find config path");
         }
     } else if cfg!(target_os = "windows") {
-        let output = Command::new("which")
+        let output = Command::new("where")
             .arg("steam")
             .output()
             .expect("Failed to execute process");
@@ -129,10 +129,10 @@ fn parse_raw_vdf(file: &str) -> Vec<Device> {
     for capture in captures {
         let unwrapped = capture.unwrap();
         let device = Device {
-            id: unwrapped.get(1).unwrap().as_str(),
-            timeused: unwrapped.get(2).unwrap().as_str(),
-            description: unwrapped.get(3).unwrap().as_str(),
-            tokenid: unwrapped.get(4).unwrap().as_str(),
+            id: unwrapped.get(1).unwrap().as_str().to_string(),
+            timeused: unwrapped.get(2).unwrap().as_str().to_string(),
+            description: unwrapped.get(3).unwrap().as_str().to_string(),
+            tokenid: unwrapped.get(4).unwrap().as_str().to_string(),
         };
         data.push(device);
     }

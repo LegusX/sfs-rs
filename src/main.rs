@@ -1,4 +1,4 @@
-// use serde::{ Serialize, Deserialize };
+use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
 use std::env;
@@ -13,7 +13,7 @@ fn main() {
     //TODO: Make backup of config file
     let raw_vdf = read_steam_config(&config_path);
     let vdf = parse_raw_vdf(&raw_vdf);
-    write_config(&vdf, &raw_vdf);
+    write_config(&vdf, &raw_vdf, &config_path);
 }
 
 fn file_exists(path: &str) -> bool {
@@ -95,7 +95,7 @@ fn parse_raw_vdf(file: &str) -> Vec<Device> {
 }
 
 //Writes the new AuthorizedDevice value to the config file
-fn write_config(vdf: &Vec<Device>, raw: &str) -> () {
+fn write_config(vdf: &Vec<Device>, raw: &str, config_path: &str) -> () {
     let replace_regex = Regex::new(r#""AuthorizedDevice"(.|\n)*(?=}\n\s})}"#);
     let mut replace_string: String = String::from("\"AuthorizedDevice\"\n        {");
     for device in vdf {
@@ -115,5 +115,6 @@ fn write_config(vdf: &Vec<Device>, raw: &str) -> () {
         replace_string.push_str(&device_string);
     }
     let new_text = replace_regex.unwrap().replace(raw, replace_string);
-    println!("{}", new_text)
+
+    fs::write(config_path, new_text.as_ref()).expect("Failed to write to config file!");
 }

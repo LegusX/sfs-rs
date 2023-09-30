@@ -8,7 +8,6 @@ use std::path::Path;
 use simple_home_dir::home_dir;
 
 #[derive(Debug)]
-#[derive(Hash)]
 pub struct Device {
     pub id: String,
     timeused: String,

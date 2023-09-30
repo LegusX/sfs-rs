@@ -6,11 +6,13 @@ use egui_dnd::dnd;
 use rfd::FileDialog;
 
 mod config;
+mod web;
 
 fn main() {
     let mut config = config::new();
     let mut steam_closed = false;
     let mut steam_config_found = false;
+    let mut users: Vec<web::User> = Default::default();
 
     //If the config path can be found, initiate the config immediately, if not, request for user to direct to it
     let config_path = match config::get_config_path() {
@@ -45,21 +47,30 @@ fn main() {
                     Err(e) => {
                         match e {
                             config::Error::NoAuthorizedDevice => {
-                                Window::new("Error:")
-                                    .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
-                                    .resizable(false)
-                                    .collapsible(false)
-                                    .show(ctx, |ui| {
-                                        ui.label(
-                                            "Failed to find any accounts connected to Family Sharing."
-                                        )
-                                    });
+                                new_error(
+                                    "No AuthorizedDevice section found. Are you sure you have family sharing enabled?",
+                                    &ctx
+                                );
                             }
                             config::Error::ConfigNotFound => {} //Handled below
                         }
                     }
                     _ => {
                         steam_config_found = true;
+                        users = match web::get_users(&config.vdf) {
+                            Ok(users) => users,
+                            Err(e) =>
+                                match e {
+                                    web::Error::InvalidID => {
+                                        new_error("Invalid response from Steam API", &ctx);
+                                        Default::default()
+                                    }
+                                    web::Error::RequestFailed => {
+                                        new_error("API request failed", &ctx);
+                                        Default::default()
+                                    }
+                                }
+                        };
                     }
                 }
             } else if !steam_config_found {
@@ -77,29 +88,52 @@ fn main() {
                                     .add_filter("config", &["vdf"])
                                     .pick_file()
                             {
-                                steam_config_found = true;
                                 match config.init(path.to_string_lossy().to_string()) {
                                     Err(e) => {
                                         match e {
-                                            _ => {
-                                                Window::new("Hello world").show(ctx, |ui| {
-                                                    ui.label("Hi");
-                                                });
+                                            config::Error::NoAuthorizedDevice => {
+                                                new_error(
+                                                    "No AuthorizedDevice section found. Are you sure you have family sharing enabled?",
+                                                    &ctx
+                                                );
+                                            }
+                                            config::Error::ConfigNotFound => {
+                                                new_error("The file chosen does not exist", ctx)
                                             }
                                         }
                                     }
-                                    _ => {}
+                                    Ok(()) => {
+                                        steam_config_found = true;
+                                        users = match web::get_users(&config.vdf) {
+                                            Ok(users) => users,
+                                            Err(e) =>
+                                                match e {
+                                                    web::Error::InvalidID => {
+                                                        new_error(
+                                                            "Invalid response from Steam API",
+                                                            &ctx
+                                                        );
+                                                        Default::default()
+                                                    }
+                                                    web::Error::RequestFailed => {
+                                                        new_error("API request failed", &ctx);
+                                                        Default::default()
+                                                    }
+                                                }
+                                        };
+                                    }
                                 };
                             }
                         }
                     });
             }
+
             CentralPanel::default().show(ctx, |ui| {
                 //Drag and drop handler
-                dnd(ui, "reorder_dnd").show_vec(&mut config.vdf, |ui, item, handle, _state| {
+                dnd(ui, "reorder_dnd").show_vec(&mut users, |ui, user, handle, _state| {
                     ui.horizontal(|ui| {
                         handle.ui(ui, |ui| {
-                            ui.label(&item.id);
+                            ui.label(&user.personaname);
                         });
                     });
                 });
@@ -110,4 +144,12 @@ fn main() {
             });
         })
         .expect("Failed to start application!");
+}
+
+fn new_error(text: &str, ctx: &egui::Context) {
+    Window::new("Error")
+        .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
+        .resizable(false)
+        .collapsible(false)
+        .show(ctx, |ui| { ui.label(text) });
 }

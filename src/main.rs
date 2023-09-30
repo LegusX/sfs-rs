@@ -1,7 +1,7 @@
 #![windows_subsystem = "windows"]
 
-use eframe::egui;
-use egui::{ CentralPanel, TopBottomPanel, Window };
+use eframe::{ egui, NativeOptions };
+use egui::{ CentralPanel, TopBottomPanel, Window, vec2, ScrollArea };
 use egui_dnd::dnd;
 use rfd::FileDialog;
 
@@ -20,12 +20,16 @@ fn main() {
         Err(_e) => String::from(""),
     };
 
+    let mut eframe_options: NativeOptions = Default::default();
+    eframe_options.initial_window_size = Some(vec2(300.0, 500.0));
+
     eframe
-        ::run_simple_native("sfs-rs", Default::default(), move |ctx, _frame| {
+        ::run_simple_native("sfs-rs", eframe_options, move |ctx, _frame| {
+            egui_extras::install_image_loaders(ctx);
             TopBottomPanel::top("header").show(ctx, |ui| {
-                ui.horizontal(|ui| {
+                ui.vertical_centered(|ui| {
                     ui.heading("sfs-rs");
-                    ui.separator();
+                    // ui.separator();
                 });
             });
             //Popup warning user to close steam before continue
@@ -71,6 +75,7 @@ fn main() {
                                     }
                                 }
                         };
+                        println!("{:?}", users);
                     }
                 }
             } else if !steam_config_found {
@@ -127,21 +132,39 @@ fn main() {
                         }
                     });
             }
-
-            CentralPanel::default().show(ctx, |ui| {
-                //Drag and drop handler
-                dnd(ui, "reorder_dnd").show_vec(&mut users, |ui, user, handle, _state| {
-                    ui.horizontal(|ui| {
-                        handle.ui(ui, |ui| {
-                            ui.label(&user.personaname);
+            if users.len() > 0 {
+                CentralPanel::default().show(ctx, |ui| {
+                    ui.style_mut().spacing.item_spacing = vec2(10.0, 15.0);
+                    //Drag and drop handler
+                    ScrollArea::vertical().show(ui, |ui| {
+                        dnd(ui, "reorder_dnd").show_vec(&mut users, |ui, user, handle, _state| {
+                            ui.horizontal(|ui| {
+                                handle.ui(ui, |ui| {
+                                    ui.add(
+                                        egui::Image
+                                            ::from_uri(&user.uri)
+                                            .maintain_aspect_ratio(true)
+                                            .fit_to_exact_size(vec2(32.0, 32.0))
+                                            .rounding(5.0)
+                                    );
+                                    ui.label(&user.personaname);
+                                });
+                            });
                         });
                     });
-                });
 
-                if ui.button("Save config").clicked() {
-                    config.write();
-                }
-            });
+                    ui.vertical_centered(|ui| {
+                        if ui.button("Save config").clicked() {
+                            config.write();
+                        }
+                    });
+                    ui.separator();
+                    ui.heading("Instructions:");
+                    ui.label(
+                        "Drag and drop the users above to rearrange their priority for Steam Family Sharing. Users on top will have their libraries borrowed from first."
+                    )
+                });
+            }
         })
         .expect("Failed to start application!");
 }

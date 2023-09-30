@@ -40,7 +40,7 @@ fn main() {
                             steam_closed = true;
                         }
                     });
-            } else if config_path.len() > 0 {
+            } else if config_path.len() > 0 && !steam_config_found {
                 match config.init(config_path.clone()) {
                     Err(e) => {
                         match e {
@@ -96,7 +96,6 @@ fn main() {
             }
             CentralPanel::default().show(ctx, |ui| {
                 //Drag and drop handler
-                // println!("{:?}", &config.vdf);
                 dnd(ui, "reorder_dnd").show_vec(&mut config.vdf, |ui, item, handle, _state| {
                     ui.horizontal(|ui| {
                         handle.ui(ui, |ui| {
@@ -106,8 +105,7 @@ fn main() {
                 });
 
                 if ui.button("Save config").clicked() {
-                    // config.write();
-                    println!("{:?}", config.vdf.pop());
+                    config.write();
                 }
             });
         })

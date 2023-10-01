@@ -3,7 +3,7 @@ name: build and release
 on:
   workflow_dispatch:
   release:
-    types: [ created ]
+    types: [created]
 
 permissions:
   contents: write
@@ -42,6 +42,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build binary
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API }}
         uses: houseabsolute/actions-rust-cross@v0
         with:
           command: "build"

@@ -1,125 +1,178 @@
-use std::fs;
-use std::fs::File;
-use std::io::prelude::*;
-use std::env;
-use std::path::Path;
-use simple_home_dir::home_dir;
-use std::process::Command;
-use std::str;
-use fancy_regex::Regex;
+#![windows_subsystem = "windows"]
+
+use eframe::{ egui, NativeOptions };
+use egui::{ CentralPanel, TopBottomPanel, Window, vec2, ScrollArea };
+use egui_dnd::dnd;
+use rfd::FileDialog;
+
+mod config;
+mod web;
 
 fn main() {
-    let config_path = get_config_path();
-    let raw_vdf = read_steam_config(&config_path);
-    create_backup(&raw_vdf, &config_path);
-    let vdf = parse_raw_vdf(&raw_vdf);
-    write_config(&vdf, &raw_vdf, &config_path);
+    let mut config = config::new();
+    let mut steam_closed = false;
+    let mut steam_config_found = false;
+    let mut users: Vec<web::User> = Default::default();
+
+    //If the config path can be found, initiate the config immediately, if not, request for user to direct to it
+    let config_path = match config::get_config_path() {
+        Ok(r) => r,
+        Err(_e) => String::from(""),
+    };
+
+    let mut eframe_options: NativeOptions = Default::default();
+    eframe_options.initial_window_size = Some(vec2(300.0, 500.0));
+
+    eframe
+        ::run_simple_native("sfs-rs", eframe_options, move |ctx, _frame| {
+            egui_extras::install_image_loaders(ctx);
+            TopBottomPanel::top("header").show(ctx, |ui| {
+                ui.vertical_centered(|ui| {
+                    ui.heading("sfs-rs");
+                    // ui.separator();
+                });
+            });
+            //Popup warning user to close steam before continue
+            if !steam_closed {
+                Window::new("Please close Steam")
+                    .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
+                    .resizable(false)
+                    .collapsible(false)
+                    .show(ctx, |ui| {
+                        ui.label(
+                            "Please fully close Steam before continuing\n(Make sure it has fully exited, and not just minimized to the system tray)"
+                        );
+                        if ui.button("Continue").clicked() {
+                            steam_closed = true;
+                        }
+                    });
+            } else if config_path.len() > 0 && !steam_config_found {
+                match config.init(config_path.clone()) {
+                    Err(e) => {
+                        match e {
+                            config::Error::NoAuthorizedDevice => {
+                                new_error(
+                                    "No AuthorizedDevice section found. Are you sure you have family sharing enabled?",
+                                    &ctx
+                                );
+                            }
+                            config::Error::ConfigNotFound => {} //Handled below
+                        }
+                    }
+                    _ => {
+                        steam_config_found = true;
+                        users = match web::get_users(&config.vdf) {
+                            Ok(users) => users,
+                            Err(e) =>
+                                match e {
+                                    web::Error::InvalidID => {
+                                        new_error("Invalid response from Steam API", &ctx);
+                                        Default::default()
+                                    }
+                                    web::Error::RequestFailed => {
+                                        new_error("API request failed", &ctx);
+                                        Default::default()
+                                    }
+                                }
+                        };
+                        println!("{:?}", users);
+                    }
+                }
+            } else if !steam_config_found {
+                Window::new("Can't find Steam config file")
+                    .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
+                    .resizable(false)
+                    .collapsible(false)
+                    .show(ctx, |ui| {
+                        ui.label(
+                            "Steam config file could not be found. Please choose the file manually"
+                        );
+                        if ui.button("Choose file").clicked() {
+                            if
+                                let Some(path) = FileDialog::new()
+                                    .add_filter("config", &["vdf"])
+                                    .pick_file()
+                            {
+                                match config.init(path.to_string_lossy().to_string()) {
+                                    Err(e) => {
+                                        match e {
+                                            config::Error::NoAuthorizedDevice => {
+                                                new_error(
+                                                    "No AuthorizedDevice section found. Are you sure you have family sharing enabled?",
+                                                    &ctx
+                                                );
+                                            }
+                                            config::Error::ConfigNotFound => {
+                                                new_error("The file chosen does not exist", ctx)
+                                            }
+                                        }
+                                    }
+                                    Ok(()) => {
+                                        steam_config_found = true;
+                                        users = match web::get_users(&config.vdf) {
+                                            Ok(users) => users,
+                                            Err(e) =>
+                                                match e {
+                                                    web::Error::InvalidID => {
+                                                        new_error(
+                                                            "Invalid response from Steam API",
+                                                            &ctx
+                                                        );
+                                                        Default::default()
+                                                    }
+                                                    web::Error::RequestFailed => {
+                                                        new_error("API request failed", &ctx);
+                                                        Default::default()
+                                                    }
+                                                }
+                                        };
+                                    }
+                                };
+                            }
+                        }
+                    });
+            }
+            if users.len() > 0 {
+                CentralPanel::default().show(ctx, |ui| {
+                    ui.style_mut().spacing.item_spacing = vec2(10.0, 15.0);
+                    //Drag and drop handler
+                    ScrollArea::vertical().show(ui, |ui| {
+                        dnd(ui, "reorder_dnd").show_vec(&mut users, |ui, user, handle, _state| {
+                            ui.horizontal(|ui| {
+                                handle.ui(ui, |ui| {
+                                    ui.add(
+                                        egui::Image
+                                            ::from_uri(&user.uri)
+                                            .maintain_aspect_ratio(true)
+                                            .fit_to_exact_size(vec2(32.0, 32.0))
+                                            .rounding(5.0)
+                                    );
+                                    ui.label(&user.personaname);
+                                });
+                            });
+                        });
+                    });
+
+                    ui.vertical_centered(|ui| {
+                        if ui.button("Save config").clicked() {
+                            config.write();
+                        }
+                    });
+                    ui.separator();
+                    ui.heading("Instructions:");
+                    ui.label(
+                        "Drag and drop the users above to rearrange their priority for Steam Family Sharing. Users on top will have their libraries borrowed from first."
+                    )
+                });
+            }
+        })
+        .expect("Failed to start application!");
 }
 
-fn file_exists(path: &str) -> bool {
-    return Path::new(path).is_file();
-}
-
-fn get_config_path() -> String {
-    let vdf_path: String;
-    if cfg!(debug_assertions) {
-        vdf_path = String::from("./config.vdf");
-    } else if cfg!(target_os = "linux") {
-        let linux_path = format!(
-            "{}/.local/share/Steam/config/config.vdf",
-            home_dir().unwrap().to_string_lossy()
-        );
-        if file_exists(linux_path.as_ref()) {
-            vdf_path = linux_path;
-        } else {
-            panic!("Can't find config path");
-        }
-    } else if cfg!(target_os = "windows") {
-        let output = Command::new("which")
-            .arg("steam")
-            .output()
-            .expect("Failed to execute process");
-        let steam_install_str = str
-            ::from_utf8(output.stdout.as_slice())
-            .expect("Failed to retrieve steam install path");
-        let steam_install_path = Path::new(steam_install_str);
-        let steam_root: &str = steam_install_path.parent().unwrap().to_str().unwrap();
-        let windows_path = format!("{}/config/config.vdf", steam_root);
-
-        if file_exists(&windows_path) {
-            vdf_path = format!("{}/config/config.vdf", steam_root);
-        } else {
-            panic!("Can't find config path");
-        }
-    } else {
-        panic!("OS {} not supported", env::consts::OS);
-    }
-    return vdf_path;
-}
-
-fn read_steam_config(path: &str) -> String {
-    let mut file = File::open(path).expect("Failed to open config file");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("Failed to read config file to string");
-
-    return contents;
-}
-
-#[derive(Debug)]
-struct Device<'a> {
-    id: &'a str,
-    timeused: &'a str,
-    description: &'a str,
-    tokenid: &'a str,
-}
-
-//Creates a struct to represent the config.vdf
-fn parse_raw_vdf(file: &str) -> Vec<Device> {
-    let mut data: Vec<Device> = Default::default();
-    let regex: Regex = Regex::new(
-        r#"(?P<id>\d+)"\s*\{\s*"timeused"\s*"(?P<timeused>\d+)"\s*"description"\s*"(?P<description>[^"]+)"\s*"tokenid"\s*"(?P<tokenid>-?\d+)"\s*}"#
-    ).unwrap();
-    let captures = regex.captures_iter(file);
-
-    for capture in captures {
-        let unwrapped = capture.unwrap();
-        let device = Device {
-            id: unwrapped.get(1).unwrap().as_str(),
-            timeused: unwrapped.get(2).unwrap().as_str(),
-            description: unwrapped.get(3).unwrap().as_str(),
-            tokenid: unwrapped.get(4).unwrap().as_str(),
-        };
-        data.push(device);
-    }
-    return data;
-}
-
-//Writes the new AuthorizedDevice value to the config file
-fn write_config(vdf: &Vec<Device>, raw: &str, config_path: &str) -> () {
-    let replace_regex = Regex::new(r#""AuthorizedDevice"(.|\n)*(?=}\n\s})}"#);
-    let mut replace_string: String = String::from("\"AuthorizedDevice\"\n        {");
-    for device in vdf {
-        let device_string = format!(
-            r#"
-                "{}"
-                {{
-                    "timeused"		"{}"
-                    "description"		"{}"
-                    "tokenid"		"{}"
-                }}"#,
-            device.tokenid,
-            device.timeused,
-            device.description,
-            device.id
-        );
-        replace_string.push_str(&device_string);
-    }
-    let new_text = replace_regex.unwrap().replace(raw, replace_string);
-
-    fs::write(config_path, new_text.as_ref()).expect("Failed to write to config file!");
-}
-
-fn create_backup(raw: &str, config_path: &str) -> () {
-    let backup_path = config_path.replace("config.vdf", "config.vdf.backup");
-    fs::write(&backup_path, raw).expect("Failed to write config backup file!");
+fn new_error(text: &str, ctx: &egui::Context) {
+    Window::new("Error")
+        .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
+        .resizable(false)
+        .collapsible(false)
+        .show(ctx, |ui| { ui.label(text) });
 }

@@ -1,0 +1,2 @@
+[env]
+STEAM_API = "xxxxxxxxxxxxxx" # To make rust-analyzer stop freaking out. Still requires setting the actual key via command line

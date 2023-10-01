@@ -25,23 +25,26 @@ pub fn get_users(devices: &Vec<crate::config::Device>) -> Result<Vec<User>, Erro
         };
         ids.push(id.to_string());
     }
+
     let users = steam_api::get_player_summaries(
         &ids.join(","),
         &env::var("STEAM_API").expect("STEAM_API not set")
     );
     match users {
         Ok(users) => {
-            Ok(
-                users
-                    .into_iter()
-                    .map(|steam_user| {
-                        User {
-                            personaname: steam_user.personaname,
-                            uri: steam_user.avatarfull,
-                        }
-                    })
-                    .collect()
-            )
+            let mut sorted: Vec<User> = Default::default();
+
+            for id in ids {
+                for user in &users {
+                    if user.steamid == id.to_string() {
+                        sorted.push(User {
+                            personaname: user.personaname.clone(),
+                            uri: user.avatarfull.clone(),
+                        });
+                    }
+                }
+            }
+            Ok(sorted)
         }
         Err(_) => {
             return Err(Error::RequestFailed);

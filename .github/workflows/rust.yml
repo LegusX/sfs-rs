@@ -40,7 +40,7 @@ jobs:
         toolchain:
           - stable
     steps:
-      - name: Instal gdk
+      - name: Install gdk
         run: sudo apt-get install libgtk-3-dev
         if: matrix.platform.os_name == 'Windows-x86_64'
       - uses: actions/checkout@v3

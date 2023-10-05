@@ -8,7 +8,8 @@ sfs-rs is a tool to help manage the priority of library selection when using Ste
 
 ### Windows
 
-Download the executable from the [releases](https://github.com/LegusX/sfs-rs/edit/main/releases/latest) tab and run it.
+Download the executable from the [releases](https://github.com/LegusX/sfs-rs/releases/latest) tab and run it.
+
 
 ### Linux
 
@@ -18,7 +19,7 @@ There are two possible methods for running on linux:
 
 This is the simplest way, but may not work, depending on your distribution.
 
-1. Download the latest release from the [releases](https://github.com/LegusX/sfs-rs/edit/main/releases/latest) tab.
+1. Download the latest release from the [releases](https://github.com/LegusX/sfs-rs/releases/latest) tab.
 2. Mark as executable `chmod +x sfs-rs` and run.
 
 #### Building from scratch

@@ -1,5 +1,3 @@
-use std::env;
-
 #[derive(Debug)]
 pub enum Error {
     InvalidID,
@@ -27,10 +25,7 @@ pub fn get_users(devices: &Vec<crate::config::Device>) -> Result<Vec<User>, Erro
         ids.push(id.to_string());
     }
 
-    let users = steam_api::get_player_summaries(
-        &ids.join(","),
-        &env::var("STEAM_API").expect("STEAM_API not set")
-    );
+    let users = steam_api::get_player_summaries(&ids.join(","), &env!("STEAM_API"));
     match users {
         Ok(users) => {
             let mut sorted: Vec<User> = Default::default();

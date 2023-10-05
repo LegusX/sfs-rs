@@ -1,4 +1,4 @@
-#![windows_subsystem = "windows"]
+#![cfg_attr(all(target_os = "windows", not(debug_assertions)), windows_subsystem = "windows")]
 
 use eframe::{ egui, NativeOptions };
 use egui::{ CentralPanel, TopBottomPanel, Window, vec2, ScrollArea };

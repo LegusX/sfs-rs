@@ -12,6 +12,7 @@ pub struct User {
     pub uri: String,
 }
 
+// Takes a Vec of AuthorizedDevices and returns with the relevant users and the URLs to their avatars for display
 pub fn get_users(devices: &Vec<crate::config::Device>) -> Result<Vec<User>, Error> {
     let mut ids: Vec<String> = Default::default();
 

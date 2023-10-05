@@ -26,9 +26,10 @@ This is the simplest way, but may not work, depending on your distribution.
 If the executable doesn't work for one reason or another, you can try building from scratch:
 
 1. Make sure you have rust and cargo installed.
-2. Clone the repository `git clone git@github.com:LegusX/sfs-rs.git`
-3. cd into the repository and run `cargo install --path .`
-4. If you've already added `~/.cargo/bin` to your path you should be able to just run `sfs-rs`, if not, you can either add it to your path, or just run `~/.cargo/bin/sfs-rs`
+2. [Get a Steam API key](https://steamcommunity.com/dev/apikey)
+3. Clone the repository `git clone git@github.com:LegusX/sfs-rs.git`
+4. cd into the repository and run `STEAM_API="STEAM_KEY_GOES_HERE" cargo install --path .`
+5. If you've already added `~/.cargo/bin` to your path you should be able to just run `sfs-rs`, if not, you can either add it to your path, or just run `~/.cargo/bin/sfs-rs`
 
 ## Usage
 

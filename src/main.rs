@@ -1,4 +1,4 @@
-#![windows_subsystem = "windows"]
+#![cfg_attr(all(target_os = "windows", not(debug_assertions)), windows_subsystem = "windows")]
 
 use eframe::{ egui, NativeOptions };
 use egui::{ CentralPanel, TopBottomPanel, Window, vec2, ScrollArea };
@@ -32,6 +32,7 @@ fn main() {
                     // ui.separator();
                 });
             });
+
             //Popup warning user to close steam before continue
             if !steam_closed {
                 Window::new("Please close Steam")
@@ -46,7 +47,11 @@ fn main() {
                             steam_closed = true;
                         }
                     });
-            } else if config_path.len() > 0 && !steam_config_found {
+            } else if
+                // Triggers when we know the config file exists, but haven't yet loaded it
+                config_path.len() > 0 &&
+                !steam_config_found
+            {
                 match config.init(config_path.clone()) {
                     Err(e) => {
                         match e {
@@ -78,7 +83,10 @@ fn main() {
                         println!("{:?}", users);
                     }
                 }
-            } else if !steam_config_found {
+            } else if
+                // Triggers when we were unable to find the config file, and haven't loaded it yet
+                !steam_config_found
+            {
                 Window::new("Can't find Steam config file")
                     .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])
                     .resizable(false)
@@ -87,6 +95,8 @@ fn main() {
                         ui.label(
                             "Steam config file could not be found. Please choose the file manually"
                         );
+
+                        // Bring up file dialog so user can manually select config.vdf
                         if ui.button("Choose file").clicked() {
                             if
                                 let Some(path) = FileDialog::new()
@@ -135,6 +145,7 @@ fn main() {
             if users.len() > 0 {
                 CentralPanel::default().show(ctx, |ui| {
                     ui.style_mut().spacing.item_spacing = vec2(10.0, 15.0);
+
                     //Drag and drop handler
                     ScrollArea::vertical().show(ui, |ui| {
                         dnd(ui, "reorder_dnd").show_vec(&mut users, |ui, user, handle, _state| {
@@ -169,6 +180,7 @@ fn main() {
         .expect("Failed to start application!");
 }
 
+// Create a basic error popup
 fn new_error(text: &str, ctx: &egui::Context) {
     Window::new("Error")
         .anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0])

@@ -26,6 +26,7 @@ pub enum Error {
     NoAuthorizedDevice,
     ConfigNotFound,
 }
+
 impl Config {
     //Writes the new AuthorizedDevice value to the config file
     pub fn write(&self) -> () {
@@ -51,6 +52,7 @@ impl Config {
 
         fs::write(&self.path, new_text.as_ref()).expect("Failed to write to config file!");
     }
+
     pub fn init(&mut self, config_path: String) -> Result<(), Error> {
         let raw_vdf = read_steam_config(&config_path);
         create_backup(&raw_vdf, &config_path);
@@ -110,6 +112,7 @@ fn parse_raw_vdf(file: &str) -> Result<Vec<Device>, Error> {
     return Ok(data);
 }
 
+// Attempts to locate the config path based on where it is normally found
 pub fn get_config_path() -> Result<String, Error> {
     let vdf_path: String;
     if cfg!(debug_assertions) && !cfg!(target_os = "windows") {

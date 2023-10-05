@@ -10,6 +10,7 @@ sfs-rs is a tool to help manage the priority of library selection when using Ste
 
 Download the executable from the [releases](https://github.com/LegusX/sfs-rs/releases/latest) tab and run it.
 
+
 ### Linux
 
 There are two possible methods for running on linux:

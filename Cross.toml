@@ -5,5 +5,8 @@ pre-build = [
     "printenv",
 ]
 
+[target.x86_64-pc-windows-msvc]
+image = "ghcr.io/cross-rs/x86_64-pc-windows-msvc-cross:local"
+
 [build.env]
 passthrough = ["STEAM_API"]
